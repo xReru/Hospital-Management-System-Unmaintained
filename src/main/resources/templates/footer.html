@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+            <div th:fragment="footer" class="footer-v1">
+        <div class="footer">
+            <div class="container"  style="margin-top: 30px;">
+                <div class="row">
+                    
+                    <div class="col-md-3">
+                        <a th:href="@{index.html}">Hospital Management System</a>
+
+                    </div>
+                    
+                    
+                    <div class="col-md-3" style="margin-bottom: 40px;">
+                        <div class="posts">
+                            <div class="headline"><h2>Latest Posts</h2></div>
+                            <ul class="list-unstyled latest-list">
+                                <li>
+                                    <a th:href="@{terms.html}">Terms and Conditions</a>
+                                    <small></small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-md-3" style="margin-bottom: 40px;">
+                        <div class="headline"><h2>Useful Links</h2></div>
+                        <ul class="list-unstyled link-list">
+                            <li><a th:href="@{about.html}">About us</a><i class="fa fa-angle-right"></i></li>
+                            <li><a th:href="@{Contact.html}">Contact us</a><i class="fa fa-angle-right"></i></li>
+                            <li><a th:href="@{appointment.html}">Book Appointment</a><i class="fa fa-angle-right"></i></li>
+                        </ul>
+                    </div>
+                    
+
+                    
+                    <div class="col-md-3 map-img" style="margin-bottom: 40px;">
+                        <div class="headline"><h2>Contact Us</h2></div>
+                        <address class="md-margin-bottom-40">
+                            <br />
+                            <br />
+                            Phone: 09287386648 <br />
+                            Email: hospitalmanagement@gmail.com
+                        </address>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>
+                            2020 &copy; All Rights Reserved.
+                            <a th:href="@{privacy.html}">Privacy Policy</a> | <a th:href="@{terms.html}">Terms of Service</a>
+                        </p>
+                    </div>
+
+                    
+                    <div class="col-md-6">
+                        <ul class="footer-socials list-inline">
+                            <li>
+                                <a th:href="@{http://www.facebook.com}" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{http://www.skype.com}" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Skype">
+                                    <i class="fa fa-skype"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{http://www.googleplus.com}" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Google Plus">
+                                    <i class="fa fa-google-plus"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{http://www.linkedin.com}" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Linkedin">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{http://www.Pinterest.com}" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Pinterest">
+                                    <i class="fa fa-pinterest"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{http://www.twitter.com}" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

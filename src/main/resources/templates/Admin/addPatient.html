@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Dashboard - Unity</title>
+    <link th:href="@{/css/bootstrap.min.css}" href="../static/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" th:href="@{https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap}">
+    <link rel="stylesheet" th:href="@{https://use.fontawesome.com/releases/v5.12.0/css/all.css}">
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+        <div th:insert="Admin/navbar :: navbar"></div>
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <div th:insert="Admin/navbar2 :: navbar2"></div>
+                <div class="container-fluid">
+                    <h3 class="text-dark mb-4">Patient Details</h3>
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <div class="col-md-10">
+                    <form action="#" th:action="@{/patients/add}" th:object="${patient}" method="post">
+                        <div class="row">
+                            <div class="form-group col-md-8">
+                                <label for="name" class="col-form-label">Name</label> <input type="text" th:field="*{name}" class="form-control" id="name" placeholder="Name"> <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="dob" class="col-form-label">DOB</label> <input type="date" th:field="*{dob}" class="form-control" id="dob" placeholder="DD-MM-YYYY"> <span th:if="${#fields.hasErrors('dob')}" th:errors="*{dob}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="patient" class="col-form-label">Age </label> <input type="text" th:field="*{age}" class="form-control" id="age" placeholder="Age"> <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="submit" class="btn btn-primary" value="Add Patient">
+                            <div class="form-group col-md-8"></div>
+                        </div>
+                    </form>
+                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="bg-white sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"><span>Copyright © Unity2022</span></div>
+                </div>
+            </footer>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    </div>
+    <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/js/theme.js}"></script>
+</body>
+</html>

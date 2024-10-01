@@ -1,0 +1,68 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Dashboard - Unity</title>
+    <link th:href="@{/css/bootstrap.min.css}" href="../static/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" th:href="@{https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap}">
+    <link rel="stylesheet" th:href="@{https://use.fontawesome.com/releases/v5.12.0/css/all.css}">
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+        <div th:insert="Admin/navbar :: navbar"></div>
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <div th:insert="Admin/navbar2 :: navbar2"></div>
+                <div class="container-fluid">
+                    <h3 class="text-dark mb-4">Patient Details</h3>
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <div th:switch="${patients}" class="container my-5">
+                                <p class="my-5">
+                                    <a href="showPatient" class="btn btn-primary"><i
+                   class="fas fa-user-plus ml-2"> Add Patient</i></a>
+                                </p>
+                                <div class="col-md-10">
+                                    <h2 th:case="null">Waiting for patients...</h2>
+                                    <div th:case="*">
+                                        <table class="table table-striped table-responsive-md">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>DOB</th>
+                                                    <th>Age</th>
+                                                    <th>Edit</th>
+                                                    <th>Delete</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr th:each="patient : ${patients}">
+                                                    <td th:text="${patient.name}"></td>
+                                                    <td th:text="${patient.dob}"></td>
+                                                    <td th:text="${patient.age}"></td>
+                                                    <td><a th:href="@{/patients/edit/{id}(id=${patient.id})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
+                                                    <td><a th:href="@{/patients/delete/{id}(id=${patient.id})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i></a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="bg-white sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"><span>Copyright © Unity2022</span></div>
+                </div>
+            </footer>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    </div>
+    <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/js/theme.js}"></script>
+</body>
+</html>
